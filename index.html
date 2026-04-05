@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/coding.png">
+</head>
+
+<body>
+    <audio id="bg-music" loop>
+        <source src="/images/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-toggle" class="music-btn" data-tip="เปิด/ปิดเพลงประกอบ">
+        <span class="material-icons" id="music-icon">volume_off</span>
+    </button>
+    <div class="main-wrapper">
+        <div class="mui-card">
+            <h1 class="mui-title">จับใบดำใบแดง</h1>
+            <div id="display" class="display-area"> กดปุ่มเพื่อเริ่ม</div>
+            <button id="btn-submit" class="mui-btn">
+                เสี่ยงดวง!
+            </button>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-label">ดำ (รอด):</span>
+                <span id="black-count" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">แดง (ไม่รอด):</span>
+                <span id="red-count" class="stat-value">0</span>
+            </div>
+            <div>
+                <button onclick="resetStats()" class="mui-btn">
+                    ล้างสถิติ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <h3>ยืนยันการล้างสถิติ</h3>
+            <p>คุณต้องการล้างสถิติทั้งหมดใช่หรือไม่?</p>
+            <div class="modal-actions">
+                <button id="modal-cancel" class="mui-btn-text">ยกเลิก</button>
+                <button id="modal-confirm" class="mui-btn-contained">ยืนยัน</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

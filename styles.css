@@ -231,3 +231,46 @@ body {
     background: #6750a4;
     color: white;
 }
+
+/* --- ก๊อปปี้ส่วนนี้ไปวางต่อท้ายไฟล์ styles.css --- */
+
+@media (max-width: 600px) {
+    .mui-card {
+        padding: 20px;       /* ลด padding ด้านในลง */
+        min-height: 300px;  /* ลดความสูงขั้นต่ำ */
+    }
+
+    .mui-title {
+        font-size: 1.5rem;   /* ลดขนาดหัวข้อ */
+    }
+
+    .display-area {
+        font-size: 1.8rem;   /* ลดขนาดผลลัพธ์ลงเพื่อไม่ให้ตกบรรทัด */
+    }
+
+    .mui-btn {
+        width: 100%;         /* ให้ปุ่ม "เสี่ยงดวง" ขยายเต็มความกว้าง card */
+        padding: 15px;       /* เพิ่ม padding ปุ่มให้กดง่ายขึ้น */
+        font-size: 1.1rem;   /* ปรับตัวหนังสือปุ่ม */
+    }
+    
+    .stats-container {
+        flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+        gap: 15px;             /* เพิ่มช่องว่างระหว่างไอเทม */
+        padding: 15px;         /* ปรับ padding */
+    }
+    
+    /* ปรับส่วนสถิติแนวตั้ง */
+    .stat-item {
+        width: 100%;
+        text-align: center; /* จัดตัวหนังสือให้อยู่กึ่งกลาง */
+    }
+
+    .stat-label {
+        font-size: 0.8rem; /* ลดขนาด label */
+    }
+
+    .stat-value {
+        font-size: 1.8rem; /* เพิ่มขนาดตัวเลขให้เด่นขึ้นในมือถือ */
+    }
+}

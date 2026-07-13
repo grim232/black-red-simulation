@@ -42,7 +42,7 @@ function App() {
     <>
       {/* Background music */}
       <audio ref={audioRef} loop preload="none">
-        <source src="/song.mp3" type="audio/mpeg" />
+        <source src={`${import.meta.env.BASE_URL}song.mp3`} type="audio/mpeg" />
       </audio>
 
       <div className="app-container">

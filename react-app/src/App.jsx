@@ -10,14 +10,22 @@ function App() {
   const [showModal, setShowModal] = useState(false)
   const [lastUpdated, setLastUpdated] = useState(null) // 'black' | 'red' | null
 
+  // Card pool settings state
+  const [initBlack, setInitBlack] = useState(50)
+  const [initRed, setInitRed] = useState(50)
+  const [poolBlack, setPoolBlack] = useState(50)
+  const [poolRed, setPoolRed] = useState(50)
+
   const audioRef = useRef(null)
 
   const handleResult = useCallback((result) => {
     if (result === 'red') {
       setRedCount((prev) => prev + 1)
+      setPoolRed((prev) => Math.max(0, prev - 1))
       setLastUpdated('red')
     } else {
       setBlackCount((prev) => prev + 1)
+      setPoolBlack((prev) => Math.max(0, prev - 1))
       setLastUpdated('black')
     }
     // Reset the "updated" animation trigger after a short delay
@@ -31,8 +39,10 @@ function App() {
   const handleResetConfirm = useCallback(() => {
     setBlackCount(0)
     setRedCount(0)
+    setPoolBlack(initBlack === '' ? 0 : initBlack)
+    setPoolRed(initRed === '' ? 0 : initRed)
     setShowModal(false)
-  }, [])
+  }, [initBlack, initRed])
 
   const handleResetCancel = useCallback(() => {
     setShowModal(false)
@@ -46,10 +56,22 @@ function App() {
       </audio>
 
       <div className="app-container">
-        <SimulationCard onResult={handleResult} />
+        <SimulationCard
+          onResult={handleResult}
+          initBlack={initBlack}
+          setInitBlack={setInitBlack}
+          initRed={initRed}
+          setInitRed={setInitRed}
+          poolBlack={poolBlack}
+          setPoolBlack={setPoolBlack}
+          poolRed={poolRed}
+          setPoolRed={setPoolRed}
+        />
         <StatsPanel
           blackCount={blackCount}
           redCount={redCount}
+          poolBlack={poolBlack}
+          poolRed={poolRed}
           lastUpdated={lastUpdated}
           onReset={handleResetRequest}
         />

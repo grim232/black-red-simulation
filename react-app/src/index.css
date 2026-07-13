@@ -286,6 +286,13 @@ body::after {
 .stat-value.black-val { color: var(--clr-black); }
 .stat-value.red-val   { color: var(--clr-red);   }
 
+.stat-sub {
+  font-size: 0.72rem;
+  color: var(--clr-text-muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
 @keyframes stat-bump {
   0%   { transform: scale(1.5); }
   100% { transform: scale(1); }
@@ -485,6 +492,115 @@ body::after {
 @keyframes particle-float {
   0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
   50%      { opacity: 0.6; transform: translateY(-60px) scale(1); }
+}
+
+/* ---------- Pool Settings & Ratios ---------- */
+.pool-settings {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.pool-settings-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pool-inputs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.pool-input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pool-input-group label {
+  font-size: 0.72rem;
+  color: var(--clr-text-muted);
+  font-weight: 500;
+}
+
+.pool-input {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--clr-text);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.pool-input:focus {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 2px var(--clr-primary-glow);
+}
+
+.pool-info {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pool-stats-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.pool-progress-bg {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  display: flex;
+}
+
+.pool-progress-black {
+  height: 100%;
+  background: var(--clr-black);
+  box-shadow: 0 0 8px var(--clr-black-glow);
+  transition: width 0.3s ease;
+}
+
+.pool-progress-red {
+  height: 100%;
+  background: var(--clr-red);
+  box-shadow: 0 0 8px var(--clr-red-glow);
+  transition: width 0.3s ease;
+}
+
+.pool-reset-btn {
+  background: transparent;
+  border: none;
+  color: var(--clr-primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.pool-reset-btn:hover {
+  background: var(--clr-primary-glow);
+  color: #c084fc;
 }
 
 /* ---------- Responsive ---------- */

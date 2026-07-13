@@ -1,6 +1,13 @@
 import { memo } from 'react'
 
-function StatsPanel({ blackCount, redCount, lastUpdated, onReset }) {
+function StatsPanel({
+  blackCount,
+  redCount,
+  poolBlack,
+  poolRed,
+  lastUpdated,
+  onReset,
+}) {
   return (
     <div className="stats-panel">
       <div className="stat-item">
@@ -10,6 +17,7 @@ function StatsPanel({ blackCount, redCount, lastUpdated, onReset }) {
         >
           {blackCount}
         </div>
+        <div className="stat-sub">เหลือ: {poolBlack} ใบ</div>
       </div>
 
       <button id="btn-reset" className="btn-reset" onClick={onReset}>
@@ -23,6 +31,7 @@ function StatsPanel({ blackCount, redCount, lastUpdated, onReset }) {
         >
           {redCount}
         </div>
+        <div className="stat-sub">เหลือ: {poolRed} ใบ</div>
       </div>
     </div>
   )
